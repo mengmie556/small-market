@@ -1,0 +1,39 @@
+/* 为购物车添加滚动功能，保持原有样式不变 */
+.cartItem {
+  max-height: 100vh; /* 设置最大高度，可根据需要调整 */
+  overflow-y: auto; /* 当内容超出时显示垂直滚动条 */
+  overflow-x: hidden; /* 隐藏水平滚动条 */
+}
+
+/* 保持标题和结账按钮固定，只让商品列表滚动 */
+.cartItem .title {
+  position: sticky;
+  top: 0;
+  background: inherit; /* 继承背景色 */
+  z-index: 10;
+}
+
+.cartItem .checkOut {
+  position: sticky;
+  bottom: 0;
+  background: inherit; /* 继承背景色 */
+  z-index: 10;
+}
+
+/* 可选：美化滚动条外观 */
+.cartItem::-webkit-scrollbar {
+  width: 5px;
+}
+
+.cartItem::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cartItem::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.cartItem::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}

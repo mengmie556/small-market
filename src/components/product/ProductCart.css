@@ -1,0 +1,120 @@
+/* 添加到购物车按钮样式 */
+.add-to-cart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 2px solid #ff6b6b;
+  background: transparent;
+  color: #ff6b6b;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 悬停效果 */
+.add-to-cart-btn:hover {
+  background: #ff6b6b;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+}
+
+/* 点击时的动画效果 */
+.add-to-cart-btn.clicked {
+  background: #4ecdc4;
+  border-color: #4ecdc4;
+  color: white;
+  transform: scale(0.95);
+  box-shadow: 0 4px 12px rgba(78, 205, 196, 0.4);
+}
+
+/* 加号图标样式 */
+.plus-icon {
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+/* 点击时图标旋转 */
+.plus-icon.rotate {
+  transform: rotate(180deg);
+  color: #fff;
+}
+
+/* 按钮文字 */
+.btn-text {
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* 点击波纹效果 */
+.add-to-cart-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transition: width 0.6s, height 0.6s;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.add-to-cart-btn.clicked::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* 确保图标和文字在波纹之上 */
+.plus-icon,
+.btn-text {
+  position: relative;
+  z-index: 1;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .add-to-cart-btn {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+  
+  .plus-icon {
+    font-size: 16px;
+  }
+  
+  .btn-text {
+    display: none; /* 在小屏幕上隐藏文字，只显示图标 */
+  }
+}
+
+/* 成功状态的额外样式 */
+.add-to-cart-btn.clicked .btn-text::after {
+  content: ' ✓';
+  animation: checkmark 0.3s ease-in-out;
+}
+
+@keyframes checkmark {
+  0% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1.2); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* 脉冲动画效果 */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.add-to-cart-btn.clicked {
+  animation: pulse 0.3s ease-in-out;
+}

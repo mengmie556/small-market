@@ -1,0 +1,122 @@
+.search-results-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  min-height: 70vh;
+}
+
+.search-header {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.back-button {
+  background: #f0f0f0;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background: #e0e0e0;
+}
+
+.search-header h2 {
+  margin: 0 0 10px 0;
+  color: #333;
+}
+
+.search-info {
+  color: #666;
+  font-size: 14px;
+}
+
+.search-term {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.result-count {
+  color: #999;
+}
+
+.loading-container {
+  text-align: center;
+  padding: 50px;
+}
+
+.search-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.no-results {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.no-results h3 {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.no-results p {
+  color: #999;
+  margin-bottom: 30px;
+}
+
+.search-suggestions h4 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.suggestion-tags {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.suggestion-tag {
+  background: #f0f8ff;
+  border: 1px solid #007bff;
+  color: #007bff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.suggestion-tag:hover {
+  background: #007bff;
+  color: white;
+}
+
+.search-prompt {
+  text-align: center;
+  padding: 50px;
+  color: #999;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .search-results-container {
+    padding: 15px;
+  }
+  
+  .search-results-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+  
+  .suggestion-tags {
+    flex-direction: column;
+    align-items: center;
+  }
+}
